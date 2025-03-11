@@ -1,0 +1,18 @@
+current directory: /Users/wodnr/Desktop/medinet-app/medinetApp/vendor/bundle/ruby/3.4.0/gems/nkf-0.2.0/ext/nkf
+/opt/homebrew/opt/ruby/bin/ruby extconf.rb
+creating Makefile
+
+current directory: /Users/wodnr/Desktop/medinet-app/medinetApp/vendor/bundle/ruby/3.4.0/gems/nkf-0.2.0/ext/nkf
+make DESTDIR\= sitearchdir\=./.gem.20250311-50620-5wkkak sitelibdir\=./.gem.20250311-50620-5wkkak clean
+
+current directory: /Users/wodnr/Desktop/medinet-app/medinetApp/vendor/bundle/ruby/3.4.0/gems/nkf-0.2.0/ext/nkf
+make DESTDIR\= sitearchdir\=./.gem.20250311-50620-5wkkak sitelibdir\=./.gem.20250311-50620-5wkkak
+compiling nkf.c
+linking shared-object nkf.bundle
+
+current directory: /Users/wodnr/Desktop/medinet-app/medinetApp/vendor/bundle/ruby/3.4.0/gems/nkf-0.2.0/ext/nkf
+make DESTDIR\= sitearchdir\=./.gem.20250311-50620-5wkkak sitelibdir\=./.gem.20250311-50620-5wkkak install
+/usr/bin/install -c -m 0755 nkf.bundle ./.gem.20250311-50620-5wkkak
+
+current directory: /Users/wodnr/Desktop/medinet-app/medinetApp/vendor/bundle/ruby/3.4.0/gems/nkf-0.2.0/ext/nkf
+make DESTDIR\= sitearchdir\=./.gem.20250311-50620-5wkkak sitelibdir\=./.gem.20250311-50620-5wkkak clean
