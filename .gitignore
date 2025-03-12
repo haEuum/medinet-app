@@ -215,6 +215,7 @@ buck-out/
 .buckd/
 .buckversion
 .fakebuckversion
+__tests__
 
 ### ReactNative.Gradle Stack ###
 .gradle
