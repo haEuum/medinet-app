@@ -5,6 +5,6 @@ export const navigationRef = createNavigationContainerRef<NavigationType>();
 
 export function navigate<T extends keyof NavigationType>(name: T, params?: NavigationType[T]) {
     if (navigationRef.isReady()) {
-        navigationRef.navigate(name, params);
+        (navigationRef.navigate as any)(name, params);
     }
 }

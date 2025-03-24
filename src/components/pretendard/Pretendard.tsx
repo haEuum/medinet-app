@@ -1,7 +1,7 @@
 import React from 'react';
 import { Text, TextProps } from 'react-native';
 import useFonts from 'src/hooks/fonts/useFonts';
-import { FontList } from 'src/assets/fonts/FontList';
+import {FontList} from "src/assets/fonts/fontList";
 
 type PretendardTextProps = TextProps & {
     fontWeight?: keyof typeof FontList

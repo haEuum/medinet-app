@@ -9,7 +9,9 @@ const Token = {
         try {
             const credentials = await Keychain.getGenericPassword({
                 service: key,
-                authenticationPrompt: useBiometrics ? "토큰을 가져오려면 생체 인증을 사용하세요" : undefined,
+                authenticationPrompt: useBiometrics
+                    ? { title: '토큰을 가져오려면 생체 인증을 사용하세요' }
+                    : undefined,
             });
 
             return credentials ? credentials.password : null;

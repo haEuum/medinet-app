@@ -2,7 +2,7 @@ import { AxiosError } from "axios";
 import Token from "src/libs/token/keychain";
 import { ACCESS_TOKEN } from "src/constants/token/token.constants";
 import { Alert } from "react-native";
-import {navigate} from "src/navigation/RootNavigation.tsx";
+import {navigate} from "src/navigation/RootNavigation";
 
 export const responseErrorInterceptor = async (error: AxiosError) => {
     if (error.response) {

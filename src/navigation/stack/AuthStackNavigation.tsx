@@ -1,7 +1,7 @@
-import Login from "src/screens/auth/login/screen.tsx";
-import SignUp from "src/screens/auth/signup/screen.tsx";
+import Login from "src/screens/auth/login/screen";
+import SignUp from "src/screens/auth/signup/screen";
 import {createStackNavigator} from "@react-navigation/stack";
-import {LoginProps} from "src/types/screen/screen.type.ts";
+import {LoginProps} from "src/types/screen/screen.type";
 
 const AuthStack = createStackNavigator<LoginProps>();
 

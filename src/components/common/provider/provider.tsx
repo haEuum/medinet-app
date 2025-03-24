@@ -1,6 +1,8 @@
+import React from "react";
+
 import { ThemeProvider } from "styled-components";
-import { Theme } from "src/style/theme";
-import GlobalStyle from "src/style/globalStyle.ts";
+import { Theme } from "src/design/theme";
+import GlobalStyle from "src/design/globalStyle";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 
 const queryClient = new QueryClient();
