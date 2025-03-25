@@ -1,5 +1,9 @@
+import { bold as Bold } from "./Pretendard-Bold.otf";
+import { meidum as Medium } from "./Pretendard-Medium.otf";
+import { regular as Regular } from "./Pretendard-Regular.otf";
+
 export const FontList = {
-    Bold: require('./Pretendard-Bold.otf'),
-    Medium: require('./Pretendard-Medium.otf'),
-    Regular: require('./Pretendard-Regular.otf'),
+  Bold: Bold,
+  Medium: Medium,
+  Regular: Regular,
 } as const;
