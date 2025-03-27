@@ -5,9 +5,13 @@ import Logo from "src/components/ui/icons/Logo.svg";
 import TextField from "src/components/ui/textfeild/textfeild";
 import AuthButton from "src/components/ui/authbutton/authbutton";
 import { Palette, Semantic } from "src/design/theme/color";
+import {StackNavigationProp} from "@react-navigation/stack";
+import {AuthStackParamList} from "src/types/navigation/navigation.type";
+
+type SignUp = StackNavigationProp<AuthStackParamList, "SignUp">
 
 const Login = () => {
-  const navigation = useNavigation();
+  const navigation = useNavigation<SignUp>();
   const [phoneNumber, setPhoneNumber] = useState("");
   const [password, setPassword] = useState("");
 
@@ -49,7 +53,7 @@ const Login = () => {
 
       <View style={styles.goSignUpField}>
         <Text style={styles.text}>계정이 없으신가요?</Text>
-        <TouchableOpacity onPress={() => navigation.navigate("signup")}>
+        <TouchableOpacity onPress={() => navigation.navigate("SignUp")}>
           <Text style={styles.linkText}>회원가입하기</Text>
         </TouchableOpacity>
       </View>
