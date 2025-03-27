@@ -7,8 +7,17 @@ import AuthButton from "src/components/ui/authbutton/authbutton";
 import { Palette, Semantic } from "src/design/theme/color";
 
 const Login = () => {
-    const navigate = useNavigation();
+  const navigation = useNavigation();
   const [phoneNumber, setPhoneNumber] = useState("");
+  const [password, setPassword] = useState("");
+
+  const onChangePassword = (text: string) => {
+    setPassword(text);
+  };
+
+  const onChangePhoneNumber = (text: string) => {
+    setPhoneNumber(text);
+  };
 
   return (
     <View style={styles.loginMainView}>
@@ -22,27 +31,29 @@ const Login = () => {
           label="전화번호"
           placeholder="전화번호를 입력해주세요."
           value={phoneNumber}
+          onChangeText={onChangePhoneNumber}
         />
         <TextField
           align="title-left"
           type="password"
           label="비밀번호"
           placeholder="비밀번호를 입력해주세요."
-          value={phoneNumber}
+          value={password}
+          onChangeText={onChangePassword}
         />
       </View>
 
       <View style={styles.buttonField}>
         <AuthButton label="로그인하기" />
       </View>
+
       <View style={styles.goSignUpField}>
-        <Text style={styles.text}>
-          계정이 없으신가요?{" "}
-          <TouchableOpacity onPress={() => navigate.navigate("signup")}>
-            <Text style={styles.linkText}>회원가입하기</Text>
-          </TouchableOpacity>
-        </Text>
+        <Text style={styles.text}>계정이 없으신가요?</Text>
+        <TouchableOpacity onPress={() => navigation.navigate("signup")}>
+          <Text style={styles.linkText}>회원가입하기</Text>
+        </TouchableOpacity>
       </View>
+
       <View style={styles.space} />
     </View>
   );
@@ -59,7 +70,7 @@ const styles = StyleSheet.create({
     backgroundColor: "#fff",
     padding: 10,
     flex: 1,
-    gap: 5
+    gap: 5,
   },
   space: {
     height: 40,
@@ -83,17 +94,18 @@ const styles = StyleSheet.create({
   },
   goSignUpField: {
     display: "flex",
-    padding: 10,
+    flexDirection: "row",
     justifyContent: "center",
     alignItems: "center",
-    gap: 10,
-    alignSelf: "stretch",
+    gap: 5,
+    padding: 10,
   },
   text: {
     color: Palette.Common[100],
     textAlign: "center",
   },
   linkText: {
-    color: Semantic.Primary.AlterNative
+    color: Semantic.Primary.AlterNative,
+    fontWeight: "bold",
   },
 });

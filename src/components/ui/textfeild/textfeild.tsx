@@ -9,7 +9,8 @@ interface InputFieldProps {
   align?: "center" | "left" | "title-left";
   label?: string;
   placeholder?: string;
-  value?: string;
+  value: string; 
+  onChangeText: (text: string) => void; 
   keyboardType?: "default" | "numeric" | "email-address" | "phone-pad";
 }
 
@@ -18,7 +19,8 @@ const InputField = ({
   align = "left",
   label,
   placeholder,
-  value,
+  value, 
+  onChangeText, 
   keyboardType,
 }: InputFieldProps) => {
   return (
@@ -30,12 +32,14 @@ const InputField = ({
           align === "center" && styles.centerAlign,
           align === "title-left" && styles.titleLeftMargin,
         ]}
-        value={value}
+        value={value} 
+        onChangeText={onChangeText} 
         placeholder={placeholder}
         placeholderTextColor={"#767680"}
         keyboardType={
           keyboardType || (type === "phone" ? "phone-pad" : "default")
         }
+        secureTextEntry={type === "password"} 
         textAlign={align === "center" ? "center" : "left"}
       />
     </View>
@@ -50,7 +54,7 @@ const styles = StyleSheet.create({
   },
   label: {
     fontSize: 16,
-    fontWeight: 500,
+    fontWeight: "500",
     color: Semantic.Label.Normal,
   },
   input: {
@@ -64,7 +68,6 @@ const styles = StyleSheet.create({
     shadowOffset: { width: 0, height: 4 },
     shadowOpacity: 0.2,
     shadowRadius: 6,
-
     elevation: 10,
   },
   centerAlign: {
