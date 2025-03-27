@@ -1,18 +1,25 @@
 import React from "react";
-import { View, StyleSheet } from "react-native";
+import { TouchableOpacity, StyleSheet } from "react-native";
 import PretendardText from "src/components/pretendard/Pretendard";
 import { Semantic, Palette } from "src/design/theme/color";
 import { Shape } from "src/design/theme/shape";
 
 interface ButtonProps {
-  label: string; 
+  label: string;
+  isActive: boolean;
 }
 
-const AuthButton = ({ label }: ButtonProps) => {
+const AuthButton = ({ label, isActive }: ButtonProps) => {
   return (
-    <View style={styles.buttonContainer}>
+    <TouchableOpacity
+      style={[
+        styles.buttonContainer,
+        { backgroundColor: isActive ? "#003866" : "#61778A" },
+      ]}
+      activeOpacity={0.8}
+    >
       <PretendardText style={styles.buttonText}>{label}</PretendardText>
-    </View>
+    </TouchableOpacity>
   );
 };
 
