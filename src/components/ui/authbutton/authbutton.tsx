@@ -7,9 +7,10 @@ import { Shape } from "src/design/theme/shape";
 interface ButtonProps {
   label: string;
   isActive: boolean;
+  onClicked: () => void;
 }
 
-const AuthButton = ({ label, isActive }: ButtonProps) => {
+const AuthButton = ({ label, isActive, onClicked }: ButtonProps) => {
   return (
     <TouchableOpacity
       style={[
@@ -17,6 +18,7 @@ const AuthButton = ({ label, isActive }: ButtonProps) => {
         { backgroundColor: isActive ? "#003866" : "#61778A" },
       ]}
       activeOpacity={0.8}
+      onPress={onClicked}
     >
       <PretendardText style={styles.buttonText}>{label}</PretendardText>
     </TouchableOpacity>

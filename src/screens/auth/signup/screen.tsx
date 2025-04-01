@@ -32,9 +32,9 @@ const SignUp = () => {
             placeholder="이름을 입력해주세요"
             align="center"
           />
-          <View style={styles.buttonView}>
-            <AuthButton label="다음" isActive={name.length > 0} />
-          </View>
+          {/* <View style={styles.buttonView}>
+            onClicked={() => handleLogin()}
+          </View> */}
         </View>
       </View>
     </TouchableWithoutFeedback>

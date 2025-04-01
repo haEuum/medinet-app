@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import {
   View,
   Text,
@@ -7,20 +7,14 @@ import {
   Keyboard,
   TouchableWithoutFeedback,
 } from "react-native";
-import { useNavigation } from "@react-navigation/native";
 import Logo from "src/components/ui/icons/Logo.svg";
 import TextField from "src/components/ui/textfeild/textfeild";
 import AuthButton from "src/components/ui/authbutton/authbutton";
 import { Palette, Semantic } from "src/design/theme/color";
-import { StackNavigationProp } from "@react-navigation/stack";
-import { AuthStackParamList } from "src/types/navigation/navigation.type";
-
-type SignUp = StackNavigationProp<AuthStackParamList, "SignUp">;
+import useLogin from "src/hooks/auth/useLogin";
 
 const Login = () => {
-  const navigation = useNavigation<SignUp>();
-  const [phoneNumber, setPhoneNumber] = useState("");
-  const [password, setPassword] = useState("");
+  const { loginData, setLoginData, navigation, handleLogin } = useLogin();
 
   return (
     <TouchableWithoutFeedback onPress={Keyboard.dismiss} accessible={false}>
@@ -34,21 +28,29 @@ const Login = () => {
             type="phone"
             label="전화번호"
             placeholder="전화번호를 입력해주세요."
-            value={phoneNumber}
-            onChangeText={setPhoneNumber}
+            value={loginData.phoneNumber}
+            onChangeText={(text) =>
+              setLoginData({ ...loginData, phoneNumber: text })
+            }
           />
           <TextField
             align="title-left"
             type="password"
             label="비밀번호"
             placeholder="비밀번호를 입력해주세요."
-            value={password}
-            onChangeText={setPassword}
+            value={loginData.password}
+            onChangeText={(text) =>
+              setLoginData({ ...loginData, password: text })
+            }
           />
         </View>
 
         <View style={styles.buttonField}>
-          <AuthButton label="로그인하기" isActive={password.length > 0}/>
+          <AuthButton
+            onClicked={() => handleLogin()}
+            label="로그인하기"
+            isActive={loginData.password.length > 0}
+          />
         </View>
 
         <View style={styles.goSignUpField}>

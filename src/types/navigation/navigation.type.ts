@@ -6,6 +6,7 @@ export type NavigationType = {
 export type AuthStackParamList = {
     Login: undefined;
     SignUp: undefined;
+    Main: undefined;
 };
 
 
