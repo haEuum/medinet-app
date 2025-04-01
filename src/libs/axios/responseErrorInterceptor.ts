@@ -1,5 +1,5 @@
 import { AxiosError } from "axios";
-import Token from "src/libs/token/keychain";
+import Token from "src/libs/token";
 import { ACCESS_TOKEN } from "src/constants/token/token.constants";
 import { Alert } from "react-native";
 import {navigate} from "src/navigation/RootNavigation";
