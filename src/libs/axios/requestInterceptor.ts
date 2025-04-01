@@ -1,7 +1,6 @@
 import { InternalAxiosRequestConfig } from "axios";
 import Token from "../token";
-import {ACCESS_TOKEN, REFRESH_TOKEN, REQUEST_TOKEN} from "src/constants/token/token.constants";
-import AuthStackNavigation from "src/navigation/stack/AuthStackNavigation";
+import {ACCESS_TOKEN, REQUEST_TOKEN} from "src/constants/token/token.constants";
 import {navigate} from "src/navigation/RootNavigation";
 
 export const requestInterceptor = (
