@@ -3,8 +3,8 @@ import Token from "../token";
 import {REQUEST_TOKEN, ACCESS_TOKEN} from "src/constants/token/token.constants";
 import {requestInterceptor} from "src/libs/axios/requestInterceptor";
 import {responseErrorInterceptor} from "src/libs/axios/responseErrorInterceptor";
+import { SERVER_URL } from "@env";
 
-const {SERVER_URL} = require("@env");
 
 const createCustomAxiosInstance = (baseURL?: AxiosRequestConfig) => {
   const baseConfig: AxiosRequestConfig = {

@@ -1,12 +1,11 @@
 export type NavigationType = {
-    rootAuth: undefined;
-    rootTab: undefined;
+  rootAuth: undefined;
+  rootTab: undefined;
+  Main: undefined;
 };
 
 export type AuthStackParamList = {
-    Login: undefined;
-    SignUp: undefined;
-    Main: undefined;
+  Login: undefined;
+  SignUp: undefined;
+  Main: undefined;
 };
-
-

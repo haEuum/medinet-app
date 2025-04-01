@@ -4,7 +4,7 @@ import { StackNavigationProp } from "@react-navigation/stack";
 import { AuthStackParamList } from "src/types/navigation/navigation.type";
 import { login } from "src/services/auth/login/login.service";
 import { showToast } from "src/components/toast/toast";
-import Token from "src/libs/token/keychain";
+import Token from "src/libs/token";
 import { ACCESS_TOKEN, REFRESH_TOKEN } from "src/constants/token/token.constants";
 
 type AuthNavigationProp = StackNavigationProp<AuthStackParamList>;
@@ -26,8 +26,8 @@ const useLogin = () => {
         return showToast("error", "오류", "비밀번호를 입력해주세요.");
       await login(loginData);
       navigation.navigate("Main");
-      Token.setToken(ACCESS_TOKEN, false);
-      Token.setToken(REFRESH_TOKEN, false);
+      Token.setToken(ACCESS_TOKEN);
+      Token.setToken(REFRESH_TOKEN);
     } catch (err) {
       const errorMessage =
         err instanceof Error ? err.message : "알 수 없는 오류가 발생했습니다.";
