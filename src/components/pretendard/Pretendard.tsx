@@ -2,20 +2,30 @@ import React from 'react';
 import { Text, TextProps } from 'react-native';
 import useFonts from 'src/hooks/fonts/useFonts';
 import {FontList} from "src/assets/fonts/fontList";
+import {Typography} from "src/design/theme/typography";
+import styled from "styled-components/native";
 
-type PretendardTextProps = TextProps & {
-    fontWeight?: keyof typeof FontList
-}
+type TypographyVariant = keyof typeof Typography;
 
-const PretendardText = ({ children, fontWeight = 'Medium', style, ...props }: PretendardTextProps) => {
+type PretendardTextProps = {
+    children: React.ReactNode;
+    variant?: TypographyVariant;
+    style?: any;
+} & React.ComponentProps<typeof StyledText>;
+
+const StyledText = styled.Text<{ variant?: TypographyVariant }>`
+  ${({ variant }) => variant && Typography[variant]};
+`;
+
+const PretendardText = ({ children, variant = 'BodyRegular', style, ...props }: PretendardTextProps) => {
     const fontsLoaded = useFonts();
 
-    if (!fontsLoaded) return <Text>Loading Fonts...</Text>;
+    if (!fontsLoaded) return <StyledText>Loading Fonts...</StyledText>;
 
     return (
-        <Text style={[style, { fontFamily: FontList[fontWeight] }]} {...props}>
+        <StyledText variant={variant} style={style} {...props}>
             {children}
-        </Text>
+        </StyledText>
     );
 };
 
