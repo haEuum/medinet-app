@@ -73,6 +73,42 @@ export const Title2Regular = css`
     font-family: 'Pretendard-Regular';
 `;
 
+export const HeadLine1Bold = css`
+    font-size: ${RFValue(20)}px;
+    font-weight: 700;
+    font-family: 'Pretendard-Bold';
+`;
+
+export const HeadLine1Medium = css`
+    font-size: ${RFValue(20)}px;
+    font-weight: 500;
+    font-family: 'Pretendard-Medium';
+`;
+
+export const HeadLine1Regular = css`
+    font-size: ${RFValue(20)}px;
+    font-weight: 400;
+    font-family: 'Pretendard-Regular';
+`;
+
+export const HeadLine2Bold = css`
+    font-size: ${RFValue(18)}px;
+    font-weight: 700;
+    font-family: 'Pretendard-Bold';
+`;
+
+export const HeadLine2Medium = css`
+    font-size: ${RFValue(18)}px;
+    font-weight: 500;
+    font-family: 'Pretendard-Medium';
+`;
+
+export const HeadLine2Regular = css`
+    font-size: ${RFValue(18)}px;
+    font-weight: 400;
+    font-family: 'Pretendard-Regular';
+`;
+
 export const BodyBold = css`
     font-size: ${RFValue(16)}px;
     font-weight: 700;
@@ -140,6 +176,12 @@ export const Typography = {
     Title2Bold,
     Title2Medium,
     Title2Regular,
+    HeadLine1Bold,
+    HeadLine1Medium,
+    HeadLine1Regular,
+    HeadLine2Bold,
+    HeadLine2Medium,
+    HeadLine2Regular,
     BodyBold,
     BodyMedium,
     BodyRegular,
