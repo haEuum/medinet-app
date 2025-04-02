@@ -10,13 +10,11 @@ import { Palette, Semantic } from "src/design/theme/color";
 import TopAddBar from "src/components/ui/topaddbar/topaddbar";
 import TextField from "src/components/ui/textfeild/textfeild";
 import AuthButton from "src/components/ui/authbutton/authbutton";
+import useSignUp from "src/hooks/auth/useSignup";
 
-const SignUp = () => {
-  const [name, setName] = useState("");
+const Step1 = () => {
+  const { name, onChangeName, navigation } = useSignUp();
 
-  const onChangeName = (text: string) => {
-    setName(text);
-  };
   return (
     <TouchableWithoutFeedback onPress={Keyboard.dismiss} accessible={false}>
       <View style={styles.signUpView}>
@@ -32,16 +30,20 @@ const SignUp = () => {
             placeholder="이름을 입력해주세요"
             align="center"
           />
-          {/* <View style={styles.buttonView}>
-            onClicked={() => handleLogin()}
-          </View> */}
+          <View style={styles.buttonView}>
+            <AuthButton
+              label="다음"
+              onClicked={() => navigation.navigate("Step2", { name })}
+              isActive={name.length > 0}
+            />
+          </View>
         </View>
       </View>
     </TouchableWithoutFeedback>
   );
 };
 
-export default SignUp;
+export default Step1;
 
 const styles = StyleSheet.create({
   signUpView: {
@@ -77,6 +79,6 @@ const styles = StyleSheet.create({
     fontWeight: 700,
   },
   buttonView: {
-    width: "90%"
-  }
+    width: "90%",
+  },
 });

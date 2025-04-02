@@ -1,17 +1,19 @@
+import { createStackNavigator } from "@react-navigation/stack";
 import Login from "src/screens/auth/login/screen";
-import SignUp from "src/screens/auth/signup/screen";
-import {createStackNavigator} from "@react-navigation/stack";
-import {LoginProps} from "src/types/screen/auth/authScreen.type";
+import SignupNavigator from "src/navigation/SignupNavigator";
 
-const AuthStack = createStackNavigator<LoginProps>();
+const AuthStack = createStackNavigator();
 
 const AuthStackNavigation = () => {
-    return (
-        <AuthStack.Navigator initialRouteName="Login" screenOptions={{headerShown: false}}>
-            <AuthStack.Screen name="Login" component={Login}/>
-            <AuthStack.Screen name="SignUp" component={SignUp}/>
-        </AuthStack.Navigator>
-    );
+  return (
+    <AuthStack.Navigator
+      initialRouteName="Login"
+      screenOptions={{ headerShown: false }}
+    >
+      <AuthStack.Screen name="Login" component={Login} />
+      <AuthStack.Screen name="SignUp" component={SignupNavigator} />
+    </AuthStack.Navigator>
+  );
 };
 
 export default AuthStackNavigation;

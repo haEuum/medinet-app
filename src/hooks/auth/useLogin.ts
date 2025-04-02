@@ -5,7 +5,10 @@ import { AuthStackParamList } from "src/types/navigation/navigation.type";
 import { login } from "src/services/auth/login/login.service";
 import { showToast } from "src/components/toast/toast";
 import Token from "src/libs/token";
-import { ACCESS_TOKEN, REFRESH_TOKEN } from "src/constants/token/token.constants";
+import {
+  ACCESS_TOKEN,
+  REFRESH_TOKEN,
+} from "src/constants/token/token.constants";
 
 type AuthNavigationProp = StackNavigationProp<AuthStackParamList>;
 
@@ -13,13 +16,13 @@ const useLogin = () => {
   const navigation = useNavigation<AuthNavigationProp>();
 
   const [loginData, setLoginData] = useState({
-    phoneNumber: "",
+    phoneNum: "",
     password: "",
   });
 
   const handleLogin = async () => {
     try {
-      if (!loginData.phoneNumber)
+      if (!loginData.phoneNum)
         return showToast("error", "오류", "전화번호를 입력해주세요.");
 
       if (!loginData.password)
