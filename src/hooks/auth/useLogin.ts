@@ -29,8 +29,8 @@ const useLogin = () => {
         return showToast("error", "오류", "비밀번호를 입력해주세요.");
       await login(loginData);
       navigation.navigate("Main");
-      Token.setToken(ACCESS_TOKEN);
-      Token.setToken(REFRESH_TOKEN);
+      await Token.setToken(ACCESS_TOKEN);
+      await Token.setToken(REFRESH_TOKEN);
     } catch (err) {
       const errorMessage =
         err instanceof Error ? err.message : "알 수 없는 오류가 발생했습니다.";
