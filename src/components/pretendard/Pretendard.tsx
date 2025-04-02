@@ -1,27 +1,30 @@
-import React from "react";
-import { Text, TextProps } from "react-native";
-import useFonts from "src/hooks/fonts/useFonts";
-import { FontList } from "src/assets/fonts/fontList";
+import React from 'react';
+import useFonts from 'src/hooks/fonts/useFonts';
+import {Typography} from "src/design/theme/typography";
+import styled from "styled-components/native";
 
-type PretendardTextProps = TextProps & {
-  fontWeight?: keyof typeof FontList;
-};
+type TypographyVariant = keyof typeof Typography;
 
-const PretendardText = ({
-  children,
-  fontWeight = "Medium",
-  style,
-  ...props
-}: PretendardTextProps) => {
-  const fontsLoaded = useFonts();
+type PretendardTextProps = {
+    children: React.ReactNode;
+    variant?: TypographyVariant;
+    style?: any;
+} & React.ComponentProps<typeof StyledText>;
 
-  if (!fontsLoaded) return <Text>Loading Fonts...</Text>;
+const StyledText = styled.Text<{ variant?: TypographyVariant }>`
+  ${({ variant }) => variant && Typography[variant]};
+`;
 
-  return (
-    <Text style={[style, { fontFamily: FontList[fontWeight] }]} {...props}>
-      {children}
-    </Text>
-  );
+const PretendardText = ({ children, variant = 'BodyRegular', style, ...props }: PretendardTextProps) => {
+    const fontsLoaded = useFonts();
+
+    if (!fontsLoaded) return <StyledText>Loading Fonts...</StyledText>;
+
+    return (
+        <StyledText variant={variant} style={style} {...props}>
+            {children}
+        </StyledText>
+    );
 };
 
 export default PretendardText;

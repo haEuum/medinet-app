@@ -1,8 +1,9 @@
 import * as SecureStore from "expo-secure-store";
 import * as LocalAuthentication from "expo-local-authentication";
+import {ACCESS_TOKEN} from "src/constants/token/token.constants";
 
 const Token = {
-    getToken: async (ACCESS_TOKEN: "accessToken"): Promise<string | null> => {
+    getToken: async (key: string=ACCESS_TOKEN): Promise<string | null> => {
         const result = await LocalAuthentication.authenticateAsync({
             promptMessage: "토큰을 가져오려면 생체 인증을 사용하세요",
         });
