@@ -10,9 +10,19 @@ export interface LoginResponse {
     }
 }
 
+export interface NewAccessToken {
+    data: {
+        accessToken: string;
+    }
+}
+
 export interface AuthenticationResponse {
     data: {
         phoneNumber: string;
         authenticationCode: string;
     };
+}
+
+export interface Authentication {
+    phoneNumber: string;
 }

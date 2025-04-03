@@ -1,6 +1,6 @@
-import AuthStackNavigation from "src/navigation/stack/AuthStackNavigation.tsx";
+import AuthStackNavigation from "src/navigation/stack/AuthStackNavigation";
 import { NavigationType } from "src/types/navigation/navigation.type";
-import MainScreen from "src/screens/main/main";
+import MainScreen from "src/screens/main/screen";
 import { createStackNavigator } from "@react-navigation/stack";
 
 const RootStack = createStackNavigator<NavigationType>();

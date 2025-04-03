@@ -3,7 +3,7 @@ import { useState } from "react";
 import { StackNavigationProp } from "@react-navigation/stack";
 import { AuthStackParamList } from "src/types/navigation/navigation.type";
 import { login } from "src/services/auth/login/login.service";
-import { showToast } from "src/components/toast/toast";
+import { showToast } from "src/libs/toast/toast";
 import Token from "src/libs/token";
 import {
   ACCESS_TOKEN,

@@ -9,9 +9,9 @@ import {
 } from "react-native";
 import Logo from "src/components/ui/icons/Logo.svg";
 import TextField from "src/components/ui/textfeild/textfeild";
-import AuthButton from "src/components/ui/authbutton/authbutton";
 import { Palette, Semantic } from "src/design/theme/color";
 import useLogin from "src/hooks/auth/useLogin";
+import Button from "src/components/ui/button";
 
 const Login = () => {
     const { loginData, setLoginData, navigation, handleLogin } = useLogin();
@@ -46,10 +46,11 @@ const Login = () => {
                 </View>
 
                 <View style={styles.buttonField}>
-                    <AuthButton
+                    <Button
                         onClicked={() => handleLogin()}
-                        label="로그인하기"
-                        isActive={loginData.password.length > 0}
+                        children="로그인하기"
+                        color="primary"
+                        size="extraLarge"
                     />
                 </View>
 

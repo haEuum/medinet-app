@@ -3,7 +3,7 @@ import { View, StyleSheet, TouchableOpacity } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 import Arrow from "src/assets/images/Arrows-chevron/Chevron-Left.svg";
 
-const TopAddBar = () => {
+const TopAppBar = () => {
   const navigation = useNavigation();
 
   const handleGoBack = () => {
@@ -22,7 +22,7 @@ const TopAddBar = () => {
   );
 };
 
-export default TopAddBar;
+export default TopAppBar;
 
 const styles = StyleSheet.create({
   topAddBarView: {

@@ -134,6 +134,11 @@ const Semantic = {
         Netural: Palette.Netural["95"],
         AlterNative: Palette.Netural["90"],
     },
+    Background: {
+        Normal: Palette.Common["00"],
+        AlterNative: Palette.Netural["99"],
+        Netural: Palette.Netural["95"],
+    },
     Normal: {
         Normal: Palette.Common["00"],
         AlterNative: Palette.Netural["99"],
@@ -142,6 +147,12 @@ const Semantic = {
     Static: {
         Black: Palette.Common["100"],
         White: Palette.Common["00"],
+    },
+    Status: {
+        Error: Palette.Red["50"],
+        Warning: Palette.Yellow["50"],
+        Info: Palette.Blue["50"],
+        Success: Palette.Green["50"],
     }
 }
 

@@ -24,7 +24,7 @@ interface ButtonProps {
   textStyle?: TypographyVariant;
 }
 
-// Color
+// Background Color
 const Color: Record<ButtonColor, string> = {
   primary: Semantic.Primary.Normal,
   AlterNative: Semantic.Primary.AlterNative,
@@ -32,12 +32,20 @@ const Color: Record<ButtonColor, string> = {
   gray: Palette.Netural["80"],
 };
 
+// Text Color
+const TextColor: Record<ButtonColor, string> = {
+  primary: Semantic.Static.White,
+  AlterNative: Semantic.Secondary.Assistive,
+  Assistive: Semantic.Static.White,
+  gray: Semantic.Label.AlterNative,
+};
+
 // Padding
 const Size: Record<ButtonSize, { paddingVertical: number; paddingHorizontal: number }> = {
-  extraLarge: { paddingVertical: 24, paddingHorizontal: 14 },
-  large: { paddingVertical: 20, paddingHorizontal: 14 },
-  medium: { paddingVertical: 16, paddingHorizontal: 10 },
-  small: { paddingVertical: 12, paddingHorizontal: 8 },
+  extraLarge: { paddingVertical: 14, paddingHorizontal: 24 },
+  large: { paddingVertical: 14, paddingHorizontal: 20 },
+  medium: { paddingVertical: 10, paddingHorizontal: 16 },
+  small: { paddingVertical: 8, paddingHorizontal: 12 },
 };
 
 // Radius
@@ -54,7 +62,7 @@ const Button = ({
                   size = "medium",
                   radius = "medium",
                   color = "primary",
-                  textStyle = "BodyRegular",
+                  textStyle = "BodyBold",
                 }: ButtonProps) => {
   const buttonStyle: StyleProp<ViewStyle> = {
     ...styles.base,
@@ -69,7 +77,7 @@ const Button = ({
           activeOpacity={0.8}
           onPress={onClicked}
       >
-        <PretendardText variant={textStyle}>
+        <PretendardText variant={textStyle} style={{color: TextColor[color]}}>
           {children}
         </PretendardText>
       </TouchableOpacity>

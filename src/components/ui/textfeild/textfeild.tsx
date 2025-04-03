@@ -62,7 +62,7 @@ const styles = StyleSheet.create({
     padding: 15,
     alignItems: "center",
     alignSelf: "stretch",
-    borderRadius: Shape.ExtraLarge.radius,
+    borderRadius: Shape.ExtraLarge,
     backgroundColor: Semantic.Fill.Assistive,
     shadowColor: "rgba(0, 0, 0, 0.2)",
     shadowOffset: { width: 0, height: 4 },
