@@ -4,4 +4,5 @@ export interface ModalProps {
     content: string;
     field: string;
     name: string;
+    onCancel: () => void;
 }

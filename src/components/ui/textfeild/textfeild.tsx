@@ -25,7 +25,7 @@ const InputField = ({
 }: InputFieldProps) => {
   return (
     <View style={styles.inputContainer}>
-      {label && <PretendardText style={styles.label}>{label}</PretendardText>}
+      {label && <PretendardText variant="LabelMedium">{label}</PretendardText>}
       <TextInput
         style={[
           styles.input,
@@ -51,11 +51,6 @@ const styles = StyleSheet.create({
     width: "100%",
     gap: 10,
     padding: 10,
-  },
-  label: {
-    fontSize: 16,
-    fontWeight: "500",
-    color: Semantic.Label.Normal,
   },
   input: {
     display: "flex",

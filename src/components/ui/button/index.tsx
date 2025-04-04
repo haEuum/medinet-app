@@ -22,6 +22,7 @@ interface ButtonProps {
   color?: ButtonColor;
   radius?: ButtonRadius;
   textStyle?: TypographyVariant;
+  fullWidth?: boolean;
 }
 
 // 배경색
@@ -65,13 +66,14 @@ const RadiusValue: Record<ButtonRadius, number> = {
 };
 
 const Button = ({
-                  children,
-                  onClicked,
-                  size = "medium",
-                  color = "primary",
-                  radius,
-                  textStyle = "BodyBold",
-                }: ButtonProps) => {
+  children,
+  onClicked,
+  size = "medium",
+  color = "primary",
+  radius,
+  textStyle = "BodyBold",
+  fullWidth = false
+}: ButtonProps) => {
   const padding = Padding[size];
   const resolvedRadius = radius ?? RadiusBySize[size]; // radius가 없으면 size 기준으로 설정
 
@@ -80,28 +82,31 @@ const Button = ({
     ...padding,
     backgroundColor: Color[color],
     borderRadius: RadiusValue[resolvedRadius],
+    width: fullWidth ? "100%" : "auto",
   };
 
   return (
-      <TouchableOpacity
-          style={buttonStyle}
-          activeOpacity={0.8}
-          onPress={onClicked}
-      >
-        <PretendardText variant={textStyle} style={{ color: TextColor[color] }}>
-          {children}
-        </PretendardText>
-      </TouchableOpacity>
+    <TouchableOpacity
+      style={buttonStyle}
+      activeOpacity={0.8}
+      onPress={onClicked}
+    >
+      <PretendardText variant={textStyle} style={{ color: TextColor[color] }}>
+        {children}
+      </PretendardText>
+    </TouchableOpacity>
   );
 };
 
 const styles = StyleSheet.create({
   base: {
     display: "flex",
-    width: "100%",
     justifyContent: "center",
     alignItems: "center",
   },
+  fullWidth: {
+    width: "100%",
+  }
 });
 
 export default Button;

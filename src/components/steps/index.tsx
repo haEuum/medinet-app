@@ -62,6 +62,7 @@ const StepContainer = () => {
                 selected={field}
                 onSelect={(v) => update("field", v)}
                 options={detailOptions}
+                modal={true}
             />
         ),
     };
