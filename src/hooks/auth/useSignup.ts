@@ -1,5 +1,8 @@
 import { useSignUpStore } from "src/stores/auth/signup.store";
 import { SignUp } from "src/types/auth/signup.type";
+import { signUp } from "src/services/auth/signup/signup.service";
+import { showToast } from "src/libs/toast/toast";
+import { useStepStore } from "src/stores/auth/step.store";
 
 const stepFieldMap: Record<number, keyof SignUp> = {
   1: "name",
@@ -20,7 +23,8 @@ const labelMap: Partial<Record<keyof SignUp, string>> = {
 };
 
 const useSignUp = () => {
-  const { update } = useSignUpStore();
+  const { update, ...signUpData } = useSignUpStore();
+  const { step } = useStepStore();
 
   const handleInput = (field: keyof SignUp, value: string) => {
     update(field, value);
@@ -39,7 +43,22 @@ const useSignUp = () => {
     return null;
   };
 
-  return { handleInput, getFieldKeyByStep, validateField };
+  const submit = async () => {
+    const error = validateField(step);
+    if (error) {
+      showToast("info", error);
+      return;
+    }
+
+    try {
+      await signUp(signUpData);
+      showToast("success", "회원가입이 완료되었습니다.");
+    } catch (err) {
+      showToast("error", "회원가입에 실패했습니다. 다시 시도해주세요.");
+    }
+  };
+
+  return { handleInput, getFieldKeyByStep, validateField, submit };
 };
 
 export default useSignUp;

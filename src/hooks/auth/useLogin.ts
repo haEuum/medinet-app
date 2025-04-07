@@ -27,7 +27,10 @@ const useLogin = () => {
 
       if (!loginData.password)
         return showToast("error", "오류", "비밀번호를 입력해주세요.");
-      await login(loginData);
+      await login({
+        phoneNumber: loginData.phoneNum,
+        password: loginData.password
+      });
       navigation.navigate("Main");
       await Token.setToken(ACCESS_TOKEN);
       await Token.setToken(REFRESH_TOKEN);
