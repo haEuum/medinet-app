@@ -23,7 +23,7 @@ const labelMap: Partial<Record<keyof SignUp, string>> = {
 };
 
 const useSignUp = () => {
-  const { update, ...signUpData } = useSignUpStore();
+  const update = useSignUpStore((state) => state.update);
   const { step } = useStepStore();
 
   const handleInput = (field: keyof SignUp, value: string) => {
@@ -50,8 +50,10 @@ const useSignUp = () => {
       return;
     }
 
+    const data: SignUp = useSignUpStore.getState();
+
     try {
-      await signUp(signUpData);
+      await signUp(data);
       showToast("success", "회원가입이 완료되었습니다.");
     } catch (err) {
       showToast("error", "회원가입에 실패했습니다. 다시 시도해주세요.");

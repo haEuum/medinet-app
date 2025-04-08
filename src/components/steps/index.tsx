@@ -3,17 +3,24 @@ import StepInput from "./input";
 import StepSelect from "./select";
 import { useStepStore } from "src/stores/auth/step.store";
 import { useSignUpStore } from "src/stores/auth/signup.store";
-import {FieldCategory} from "src/types/user/field.type";
+import { FieldCategory } from "src/types/user/field.type";
 
 const StepContainer = () => {
     const { step } = useStepStore();
-    const { name, password, phoneNumber, code, field, userClass, update } = useSignUpStore();
+
+    const name = useSignUpStore((state) => state.name);
+    const password = useSignUpStore((state) => state.password);
+    const phoneNumber = useSignUpStore((state) => state.phoneNumber);
+    const code = useSignUpStore((state) => state.code);
+    const userClass = useSignUpStore((state) => state.userClass);
+    const field = useSignUpStore((state) => state.field);
+    const update = useSignUpStore((state) => state.update);
 
     const majorOptions = Object.keys(FieldCategory);
-
-    const detailOptions = userClass && userClass in FieldCategory
-        ? Object.keys(FieldCategory[userClass as keyof typeof FieldCategory])
-        : [];
+    const detailOptions =
+        userClass && userClass in FieldCategory
+            ? Object.keys(FieldCategory[userClass as keyof typeof FieldCategory])
+            : [];
 
     const stepComponentMap: Record<number, React.ReactNode> = {
         1: (

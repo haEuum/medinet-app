@@ -1,28 +1,16 @@
 import { create } from "zustand";
 import { SignUp } from "src/types/auth/signup.type";
 
-type SignUpStore = SignUp & {
-    reset: () => void;
-    update: (key: keyof SignUp, value: string) => void;
-};
+interface SignUpState extends SignUp {
+    update: <K extends keyof SignUp>(key: K, value: SignUp[K]) => void;
+}
 
-export const useSignUpStore = create<SignUpStore>(set => ({
+export const useSignUpStore = create<SignUpState>((set) => ({
     name: "",
     password: "",
     phoneNumber: "",
     code: "",
     userClass: "",
     field: "",
-
-    update: (key, value) => set(state => ({ ...state, [key]: value })),
-    reset: () => set({
-        name: "",
-        password: "",
-        phoneNumber: "",
-        code: "",
-        userClass: "",
-        field: "",
-        update: () => {},
-        reset: () => {}
-    }),
+    update: (key, value) => set((state) => ({ ...state, [key]: value })),
 }));
