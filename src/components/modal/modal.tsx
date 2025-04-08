@@ -6,8 +6,7 @@ import Button from "src/components/ui/button";
 import PretendardText from "../pretendard/Pretendard";
 import { useNavigation } from "@react-navigation/native";
 
-const modal = ({ title, subtitle, content, field, name, onCancel }: ModalProps) => {
-  const navigate = useNavigation();
+const modal = ({ title, subtitle, content, field, name, onCancel, onClick }: ModalProps) => {
   return (
     <View style={styles.modalContainer}>
       <View style={styles.topButton} />
@@ -30,7 +29,7 @@ const modal = ({ title, subtitle, content, field, name, onCancel }: ModalProps) 
           color="AlterNative"
           size="extraLarge"
         />
-        <Button children="네, 생성할게요" onClicked={() => { }} size="extraLarge" />
+        <Button children="네, 생성할게요" onClicked={onClick} size="extraLarge" />
       </View>
     </View>
   );

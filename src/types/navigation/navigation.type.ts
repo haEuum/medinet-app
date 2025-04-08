@@ -7,5 +7,5 @@ export type NavigationType = {
 export type AuthStackParamList = {
   Login: undefined;
   SignUp: undefined;
-  Main: undefined;
+  Complete: undefined; // 회원가입 완료
 };

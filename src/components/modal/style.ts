@@ -45,12 +45,10 @@ export const styles = StyleSheet.create({
         alignSelf: "stretch",
     },
     buttonContainer: {
-        justifyContent: "center",
         width: "100%",
         display: "flex",
         alignItems: "center",
         gap: 20,
-        alignSelf: "stretch",
         flexDirection: "row",
     },
     subtitle: {

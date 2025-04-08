@@ -71,11 +71,6 @@ const StepSelect = ({ title, selected, onSelect, options, modal = false }: Props
         });
     };
 
-    const handleCancel = () => {
-        handleCloseModal();
-        navigation.goBack();
-    };
-
     return (
         <SafeAreaView style={{ flex: 1 }}>
             <Layout>
@@ -133,6 +128,7 @@ const StepSelect = ({ title, selected, onSelect, options, modal = false }: Props
                                         field={signupData.field}
                                         name={signupData.name}
                                         onCancel={handleCloseModal}
+                                        onClick={() => navigation.navigate("Complete")}
                                     />
                                 </View>
                             </TouchableWithoutFeedback>
