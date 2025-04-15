@@ -1,0 +1,134 @@
+# macOS 관련
+.DS_Store
+.AppleDouble
+.LSOverride
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+.apdisk
+
+# iCloud 파일
+*.icloud
+
+# Node & Yarn
+node_modules/
+yarn.lock
+.pnpm-debug.log*
+.yarn/cache
+.yarn/unplugged
+.yarn/build-state.yml
+.yarn/install-state.gz
+.pnp.*
+
+# npm logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+*.log
+logs/
+
+# TypeScript
+*.tsbuildinfo
+
+# Babel
+.babelrc
+.babelrc.js
+
+# ESLint / Prettier
+.eslintcache
+.stylelintcache
+
+# React Native
+.expo/
+*.expo/
+*.expo-shared/
+__generated__/
+*.tflite
+android/.gradle
+android/.idea
+ios/Pods/
+ios/Podfile.lock
+ios/build/
+ios/DerivedData/
+ios/.xcode.env
+*.pbxuser
+*.mode1v3
+*.mode2v3
+*.perspectivev3
+*.xcworkspace
+xcuserdata/
+*.xcodeproj/project.xcworkspace/xcuserdata/
+*.xcuserstate
+
+# Xcode 관련
+*.xcscmblueprint
+*.xccheckout
+
+# Android
+android/.gradle
+android/.idea
+android/local.properties
+*.keystore
+*.jks
+*.apk
+*.hprof
+captures/
+.externalNativeBuild/
+.cxx/
+.gradle/
+build/
+output.json
+
+# VSCode / WebStorm
+.idea/
+.vscode/
+*.suo
+*.ntvs_analysis.dat
+*.njsproj
+*.sln
+*.sw?
+
+# WebStorm 플러그인 캐시 및 설정
+.idea/**/workspace.xml
+.idea/**/tasks.xml
+.idea/**/dictionaries
+.idea/**/shelf
+.idea/httpRequests
+.idea/caches/
+.idea/modules.xml
+.idea/sonarlint/
+.idea/sonarIssues.xml
+.idea/markdown-navigator/
+.idea/codestream.xml
+
+# 환경 변수 파일
+.env
+.env.*
+.env.local
+
+# Jest 테스트
+coverage/
+.nyc_output/
+jest.config.js
+jest.setup.js
+
+# Others
+*.tgz
+*.bak
+*.tmp
+.cache/
+dist/
+out/
+*.iml
+*.ipr
+*.iws
+*.gz
+
+# develop
+src/config
