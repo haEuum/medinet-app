@@ -10,7 +10,7 @@ target 'Medinet' do
   use_react_native!(
     :path => '../node_modules/react-native',
     :hermes_enabled => true,
-    :fabric_enabled => true,
+    :fabric_enabled => false,
     :app_path => "#{Pod::Config.instance.installation_root}/.."
   )
 
@@ -26,7 +26,11 @@ post_install do |installer|
       config.build_settings['EXCLUDED_ARCHS[sdk=iphonesimulator*]'] = 'arm64'
       config.build_settings['CLANG_CXX_LANGUAGE_STANDARD'] = 'c++17'
       config.build_settings['CLANG_CXX_LIBRARY'] = 'libc++'
-      config.build_settings['OTHER_CPLUSPLUSFLAGS'] ||= ['$(inherited)', '-DFMT_EXPLICIT_CHAR8_T=0']
+
+      if target.name == 'fmt'
+        config.build_settings['OTHER_CPLUSPLUSFLAGS'] ||= ['$(inherited)']
+        config.build_settings['OTHER_CPLUSPLUSFLAGS'] << '-DFMT_EXPLICIT_CHAR8_T=0'
+      end
     end
   end
 end
