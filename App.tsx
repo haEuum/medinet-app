@@ -1,11 +1,13 @@
-import React from "react";
-import Provider from "src/components/common/provider";
-import RootNavigator from "src/navigation/root";
+import React from 'react';
+import Provider from 'src/components/common/provider';
+import {Props} from "src/components/common/provider/type";
 
-const App = () => {
-  return (
-      <Provider>
-        <RootNavigator />
-      </Provider>
-  )
-}
+const App = ({ children }: Props) => {
+    return (
+        <Provider>
+            {children}
+        </Provider>
+    );
+};
+
+export default App;
