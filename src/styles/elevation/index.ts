@@ -1,19 +1,19 @@
-export const shadow = {
-    shadow1: {
+const elevation = {
+    elevation1: {
         shadowColor: '#000000',
         shadowOffset: { width: 0, height: 3 },
         shadowOpacity: 0.08,
         shadowRadius: 10,
         elevation: 1,
     },
-    shadow2: {
+    elevation2: {
         shadowColor: '#000000',
         shadowOffset: { width: 0, height: 6 },
         shadowOpacity: 0.06,
         shadowRadius: 20,
         elevation: 2,
     },
-    shadow3: {
+    elevation3: {
         shadowColor: '#000000',
         shadowOffset: { width: 0, height: 12 },
         shadowOpacity: 0.04,
@@ -21,3 +21,5 @@ export const shadow = {
         elevation: 3,
     },
 };
+
+export default elevation;

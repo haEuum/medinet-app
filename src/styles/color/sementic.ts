@@ -2,64 +2,64 @@ import palette from './palette';
 
 const sementic = {
     // Primary
-    primary: {
-        normal: palette.Blue[20],
-        alternative: '#385C7A',
-        assistive: '#61778A',
+    Primary: {
+        Normal: palette.Blue['20'],
+        Alternative: '#385C7A',
+        Assistive: '#61778A',
     },
 
     // Secondary
-    secondary: {
-        normal: '#BFC1C1',
-        alternative: '#D1D4D5',
-        assistive: '#ECF0F1',
+    Secondary: {
+        Normal: '#BFC1C1',
+        Alternative: '#D1D4D5',
+        Assistive: '#ECF0F1',
     },
 
     // Label
-    label: {
-        normal: palette.Neutral[5],
-        strong: palette.Common[100],
-        neutral: palette.Neutral[25],
-        alternative: palette.Neutral[40],
-        assistive: palette.Neutral[50],
-        disable: palette.Neutral[97],
+    Label: {
+        Normal: palette.Neutral['5'],
+        Strong: palette.Common['100'],
+        Neutral: palette.Neutral['25'],
+        Alternative: palette.Neutral['40'],
+        Assistive: palette.Neutral['50'],
+        Disable: palette.Neutral['97'],
     },
 
     // Line
-    line: {
-        normal: palette.Neutral[90],
-        neutral: palette.Neutral[95],
-        alternative: palette.Neutral[97],
+    Line: {
+        Normal: palette.Neutral['90'],
+        Neutral: palette.Neutral['95'],
+        Alternative: palette.Neutral['97'],
     },
 
     // Fill
-    fill: {
-        normal: palette.Neutral[97],
-        neutral: palette.Neutral[95],
-        alternative: palette.Neutral[90],
-        support: palette.Common[0],
-        assistive: palette.Common[0],
+    Fill: {
+        Normal: palette.Neutral['97'],
+        Neutral: palette.Neutral['95'],
+        Alternative: palette.Neutral['90'],
+        Support: palette.Common['0'],
+        Assistive: palette.Common['0'],
     },
 
     // Background
-    background: {
-        normal: palette.Common[0],
-        neutral: palette.Neutral[99],
-        alternative: palette.Neutral[99],
+    Background: {
+        Normal: palette.Common['0'],
+        Neutral: palette.Neutral['99'],
+        Alternative: palette.Neutral['99'],
     },
 
     // Status
-    status: {
-        negative: palette.Red[50],
-        cautionary: palette.Yellow[50],
-        positive: palette.Green[50],
-        info: palette.Blue[50],
+    Status: {
+        Negative: palette.Red['50'],
+        Cautionary: palette.Yellow['50'],
+        Positive: palette.Green['50'],
+        Info: palette.Blue['50'],
     },
 
     // Static
-    static: {
-        white: palette.Common[0],
-        black: palette.Common[100],
+    Static: {
+        White: palette.Common['0'],
+        Black: palette.Common['100'],
     },
 };
 

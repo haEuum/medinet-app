@@ -1,29 +1,23 @@
 import React from 'react';
-import {Text, StyleSheet, TextStyle} from 'react-native';
+import {Text, TextStyle } from 'react-native';
+import Typography from "src/styles/typography";
 
-type FontWeight = 'Bold' | 'Medium' | 'Regular';
+type TypographyKey = keyof typeof Typography;
 
 type Props = {
-    children: React.ReactNode;
-    fontSize?: number;
-    fontWeight?: FontWeight;
+    children?: string;
+    textStyle?: TypographyKey;
     style?: TextStyle;
 };
 
-const Pretendard = ({children, fontSize = 16, fontWeight = 'Medium', style}: Props) => {
+
+const Pretendard = ({ children, textStyle = 'BodyMedium', style }: Props) => {
     return (
-        <Text
-            style={[
-                {
-                    fontFamily: `Pretendard-${fontWeight}`,
-                    fontSize,
-                },
-                style,
-            ]}
-        >
+        <Text style={[Typography[textStyle], style]}>
             {children}
         </Text>
     );
-}
+};
+
 
 export default Pretendard;

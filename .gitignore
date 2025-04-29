@@ -49,3 +49,6 @@ jest-coverage/
 # Temporary files
 tmp/
 temp/
+
+# Develop
+src/config
