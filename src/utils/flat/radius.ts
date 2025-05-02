@@ -5,7 +5,7 @@ export function RadiusUtil(
     for (const key in obj) {
         if (!obj.hasOwnProperty(key)) continue;
 
-        result[`$Border${key}`] = obj[key];
+        result[`$Radius${key}`] = obj[key];
     }
     return result;
 }
