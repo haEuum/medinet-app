@@ -1,0 +1,24 @@
+# Ignore local dev stuff
+.env
+.env.*
+*.log
+
+# OS
+.DS_Store
+
+# IDE
+.vscode/
+.idea/
+
+# Test and coverage
+__tests__/
+coverage/
+
+# Build
+node_modules/
+web-build/
+dist/
+
+# Git
+.git/
+.gitignore

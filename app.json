@@ -1,39 +1,49 @@
 {
   "expo": {
-    "name": "medinet-app",
-    "slug": "medinet-app",
+    "name": "medinet",
+    "slug": "medinet",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
-    "userInterfaceStyle": "light",
+    "icon": "./assets/images/icon.png",
+    "scheme": "medinet",
+    "userInterfaceStyle": "automatic",
     "newArchEnabled": true,
-    "splash": {
-      "image": "./assets/splash-icon.png",
-      "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
-    },
     "ios": {
-      "supportsTablet": true,
-      "bundleIdentifier": "com.qtaghdi.medinetapp",
-      "infoPlist": {
-        "ITSAppUsesNonExemptEncryption": false
-      }
+      "supportsTablet": true
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/adaptive-icon.png",
+        "foregroundImage": "./assets/images/logo.png",
         "backgroundColor": "#ffffff"
       },
-      "package": "com.qtaghdi.medinetapp"
+      "edgeToEdgeEnabled": true,
+      "package": "com.haeuum.medinet"
     },
     "web": {
-      "favicon": "./assets/favicon.png"
+      "bundler": "metro",
+      "output": "static",
+      "favicon": "./assets/images/logo.png"
+    },
+    "plugins": [
+      "expo-router",
+      [
+        "expo-splash-screen",
+        {
+          "image": "./assets/images/logo.png",
+          "imageWidth": 200,
+          "resizeMode": "contain",
+          "backgroundColor": "#ffffff"
+        }
+      ]
+    ],
+    "experiments": {
+      "typedRoutes": true
     },
     "extra": {
+      "router": {},
       "eas": {
-        "projectId": "f7f1898f-5095-414a-aad7-eaae3835e076"
+        "projectId": "39c5f28c-732f-4fbe-9c18-15b4ca6f1752"
       }
-    },
-    "owner": "qtaghdi"
+    }
   }
 }
