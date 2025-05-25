@@ -1,7 +1,7 @@
 import React from "react";
 import { View, Text, TouchableOpacity } from "react-native";
 import { router } from "expo-router";
-import Logo from "src/assets/images/logo";
+import Logo from "src/assets/images/logo.svg";
 import TextField from "src/components/ui/textField";
 import Button from "src/components/ui/button";
 import { styles } from "./style";
@@ -40,7 +40,7 @@ const Login = () => {
 
             <View style={styles.signupContainer}>
                 <Text style={styles.signupText}>계정이 없으신가요?</Text>
-                <TouchableOpacity onPress={() => router.push("/signup")}>
+                <TouchableOpacity onPress={() => router.push("/auth/signUp")}>
                     <Text style={styles.signupLink}>회원가입하기</Text>
                 </TouchableOpacity>
             </View>
