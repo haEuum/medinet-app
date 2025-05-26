@@ -1,4 +1,8 @@
 import EStyleSheet from 'react-native-extended-stylesheet';
+import typography from "src/styles/typography";
+import elevation from "src/styles/elevation";
+import sementic from "src/styles/color/sementic";
+import radius from "src/styles/radius";
 
 export const styles = EStyleSheet.create({
     inputContainer: {
@@ -8,15 +12,15 @@ export const styles = EStyleSheet.create({
         paddingVertical: 5,
     },
     label: {
-        ...EStyleSheet.value("$BodyMedium"),
-        color: '$LabelNormal',
+        ...typography.BodyMedium,
+        color: sementic.Label.Normal
     },
     input: {
         width: '100%',
         padding: 15,
-        borderRadius: '$RadiusExtraLarge',
-        backgroundColor: '$FillAssistive',
-        ...EStyleSheet.value("$elevation1"),
+        borderRadius: radius.ExtraLarge,
+        backgroundColor: sementic.Fill.Assistive,
+        ...elevation.elevation1,
     },
     centerAlign: {
         textAlign: 'center',

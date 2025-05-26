@@ -1,50 +1,52 @@
 import EStyleSheet from 'react-native-extended-stylesheet';
+import typography from "src/styles/typography";
+import radius from "src/styles/radius";
+import sementic from "src/styles/color/sementic";
 
 export const styles = EStyleSheet.create({
     base: {
         justifyContent: 'center',
         alignItems: 'center',
-        borderRadius: '$RadiusMedium',
+        borderRadius: radius.Medium,
     },
 
-    // 사이즈별 (높이 + 패딩까지 정확하게 분리)
     ExtraLarge: {
         height: 60,
         paddingHorizontal: 24,
-        borderRadius: '$RadiusExtraLarge',
+        borderRadius: radius.ExtraLarge,
     },
     Large: {
         height: 52,
         paddingHorizontal: 20,
-        borderRadius: '$RadiusLarge',
+        borderRadius: radius.Large,
     },
     Medium: {
         height: 44,
         paddingHorizontal: 16,
-        borderRadius: '$RadiusMedium',
+        borderRadius: radius.Medium,
     },
     Small: {
         height: 36,
         paddingHorizontal: 12,
-        borderRadius: '$RadiusSmall',
+        borderRadius: radius.Small,
     },
 
     // 상태별
     enabled: {
-        backgroundColor: '$PrimaryNormal',
+        backgroundColor: sementic.Primary.Normal,
     },
     disabled: {
-        backgroundColor: '$SecondaryNormal',
+        backgroundColor: sementic.Secondary.Normal,
     },
 
     // 텍스트
     text: {
-        ...EStyleSheet.value("$BodyMedium"),
+        ...typography.BodyMedium
     },
     textEnabled: {
-        color: '$StaticWhite',
+        color: sementic.Static.White,
     },
     textDisabled: {
-        color: '$LabelAssistive',
+        color: sementic.Label.Normal,
     },
 });

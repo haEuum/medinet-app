@@ -3,12 +3,8 @@ import {Stack} from 'expo-router';
 import {StatusBar} from 'expo-status-bar';
 import 'react-native-reanimated';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
-import EStyleSheet from 'react-native-extended-stylesheet';
-import { EStyleConfig } from 'src/styles/build';
 
 const queryClient = new QueryClient();
-
-EStyleSheet.build(EStyleConfig);
 
 export default function RootLayout() {
     const [loaded] = useFonts({
@@ -23,8 +19,9 @@ export default function RootLayout() {
 
     return (
         <QueryClientProvider client={queryClient}>
-            <Stack>
-                <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
+            <Stack screenOptions={{ headerShown: false }}>
+                <Stack.Screen name="(tabs)"/>
+                <Stack.Screen name="(auth)" />
             </Stack>
             <StatusBar style="auto" />
         </QueryClientProvider>

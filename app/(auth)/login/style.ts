@@ -1,10 +1,12 @@
 import EStyleSheet from "react-native-extended-stylesheet";
+import typography from "src/styles/typography";
+import sementic from "src/styles/color/sementic";
 
 export const styles = EStyleSheet.create({
     container: {
         flex: 1,
         padding: 10,
-        backgroundColor: "$BackgroundNormal",
+        backgroundColor: sementic.Background.Normal,
         justifyContent: "center",
         alignItems: "center",
     },
@@ -27,13 +29,11 @@ export const styles = EStyleSheet.create({
         gap: 5,
     },
     signupText: {
-        fontSize: "$BodyRegular.fontSize",
-        fontFamily: "$BodyRegular.fontFamily",
-        color: "$LabelNormal",
+        ...typography.BodyRegular,
+        color: sementic.Label.Normal,
     },
     signupLink: {
-        fontSize: "$BodyBold.fontSize",
-        fontFamily: "$BodyBold.fontFamily",
-        color: "$PrimaryAlternative",
+        ...typography.BodyBold,
+        color: sementic.Primary.Alternative,
     },
 });

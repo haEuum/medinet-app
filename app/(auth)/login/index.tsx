@@ -40,7 +40,7 @@ const Login = () => {
 
             <View style={styles.signupContainer}>
                 <Text style={styles.signupText}>계정이 없으신가요?</Text>
-                <TouchableOpacity onPress={() => router.push("/auth/signUp")}>
+                <TouchableOpacity onPress={() => router.push("/(auth)/signUp")}>
                     <Text style={styles.signupLink}>회원가입하기</Text>
                 </TouchableOpacity>
             </View>
