@@ -1,11 +1,11 @@
 import { View, Text } from "react-native";
 
-const Main = () => {
+const Triage = () => {
     return (
         <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
-            <Text>여긴 Main 탭입니다</Text>
+            <Text>여긴 Triage 탭입니다</Text>
         </View>
     );
 };
 
-export default Main;
+export default Triage;
