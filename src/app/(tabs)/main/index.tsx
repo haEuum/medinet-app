@@ -1,11 +1,19 @@
-import { View, Text } from "react-native";
+import React from "react";
+import { View, StyleSheet } from "react-native";
+import Map from "src/components/map";
 
-const Main = () => {
+const MapScreen = () => {
     return (
-        <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
-            <Text>여긴 Main 탭입니다</Text>
+        <View style={styles.container}>
+            <Map />
         </View>
     );
 };
 
-export default Main;
+export default MapScreen;
+
+const styles = StyleSheet.create({
+    container: {
+        flex: 1,
+    },
+});
